@@ -54,4 +54,4 @@ if __name__ == '__main__':
             })
         for item in recorder:
             save_image(item)
-        pd.DataFrame(recorder).to_csv('recorder.csv')
+        pd.DataFrame(recorder).to_excel('recorder.xlsx')

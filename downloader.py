@@ -52,6 +52,6 @@ if __name__ == '__main__':
                 'title': get_title(content),  # 文章标题
                 'image_url': get_image_url(content)  # 保存微信头图的url
             })
-        # for item in recorder:
-        #     save_image(item)
+        for item in recorder:
+            save_image(item)
         pd.DataFrame(recorder).to_csv('recorder.csv')

@@ -32,9 +32,9 @@ def save_image(item):
     content = requests.get(item['image_url']).content
     if not os.path.exists('images'):
         os.mkdir('images')
-    with open('images/%d.jpeg' % item['id'], 'wb') as img_f:
+    with open('images/%s.jpeg' % item['id'], 'wb') as img_f:
         img_f.write(content)
-    print('id %d 爬取成功' % item['id'])
+    print('id %s 爬取成功' % item['id'])
 
 
 if __name__ == '__main__':
@@ -47,7 +47,7 @@ if __name__ == '__main__':
             content = get_content(url)
             # 记录id、url
             recorder.append({
-                'id': int(time.time() * 1000000),
+                'id': 'p%d' % int(time.time() * 1000000),
                 'article_url': url,  # 文章url
                 'title': get_title(content),  # 文章标题
                 'image_url': get_image_url(content)  # 保存微信头图的url
